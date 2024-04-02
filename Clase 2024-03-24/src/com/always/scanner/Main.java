@@ -10,7 +10,8 @@ public class Main {
 		double num1 = sumador.nextDouble();
 		double num2 = sumador.nextDouble();
 		System.out.println("La potencia es " +(num1 + num2));
-
+		int arreglo[] = new int[10];
+		
 	}	
 
 }

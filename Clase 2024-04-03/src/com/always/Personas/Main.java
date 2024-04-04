@@ -40,7 +40,7 @@ public class Main {
 		for(Persona persona : muchasPersonas) {
 			System.out.println(persona);
 		}
-		Stream.of(muchasPersonas);
+		
 	}
 
 }

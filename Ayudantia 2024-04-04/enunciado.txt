@@ -1,0 +1,14 @@
+Modelar un Auto Electrico
+
+El auto tiene como parámetros:
+- Carga de la bateria 
+- Gasto de bateria por metro
+- Odometro
+
+Crear funcion que cargue la bateria
+
+Crear funcion que avance actualizando el odometro y la bateria
+
+Crear funcion que entregue la distancia máxima que puede recorrer
+
+

@@ -1,0 +1,22 @@
+Modelar Persona
+
+La persona tiene los siguientes atributos:
+nombre
+hp
+inventario (lista de items)
+capacidad de carga (kg)
+espacio de inventario (m3)
+
+Tiene los metodos
+Obtener el peso total del inventario
+obtener el volumen total del inventario
+Verificar si cabe el item en el volumen (item)
+Verificar si el personaje soporta mas peso (item)
+Agregar item(item)
+
+
+Los itemes tienen los siguientes atributos:
+nombre
+peso (kg)
+volumen (m3)
+

@@ -11,14 +11,14 @@ public class Main {
 		System.out.println("El valor de miEntero es: " + miEntero);
 		System.out.println("El valor de miDouble es: " + miDouble);
 		System.out.println("El valor de miString es: " + miString);
-		
+
 		System.out.println("Numero de Euler " + Math.E);
 		System.out.println("Numero Pi " + Math.PI);
 
 		Scanner lector = new Scanner(System.in);
-		//while (miEntero != 0) {
-		//for(int i = 0; i < 789789; i++) {
-		for(; miEntero !=0; ) {
+		// while (miEntero != 0) {
+		// for(int i = 0; i < 789789; i++) {
+		for (; miEntero != 0;) {
 			System.out.println("Ingresa tu edad");
 			miEntero = lector.nextInt();
 			/*
@@ -53,7 +53,7 @@ public class Main {
 				System.out.println("Edad random");
 				break;
 			}
-			
+
 		}
 		System.out.println("Ha terminado el ciclo");
 	}

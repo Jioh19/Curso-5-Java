@@ -26,6 +26,7 @@ public class Main {
 		double balance = cliente.getCuentas().get(0).getBalance();
 		ArrayList<Cuenta> cuentas1 = cliente.getCuentas();
 		Cuenta cuenta1 = cuentas1.get(0);
+		// Js cuentas1[0]
 		double balance1 = cuenta1.getBalance();
 		
 		System.out.println(balance);
@@ -45,8 +46,18 @@ public class Main {
 //		System.out.println(cuentaDolares);
 //		scanner.close();
 //		
+		FormaDePago pago1 = new Moneda();
+		FormaDePago pago2 = new TarjetaDeCredito();
 		
+		ArrayList<FormaDePago> pagos = new ArrayList<>();
+		pagos.add(pago1);
+		pagos.add(pago2);
 		
+		for(FormaDePago pago : pagos) {
+			pago.realizarPago();
+		}
+
+		scanner.close();
 	}
 
 }

@@ -1,5 +1,6 @@
 
 public abstract class Cuenta {
+	
 	private int numeroCuenta;
 	private double balance;
 	private String alias;

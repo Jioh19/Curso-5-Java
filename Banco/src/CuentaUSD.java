@@ -20,6 +20,11 @@ public class CuentaUSD extends Cuenta{
 		return super.retiro(retiro);
 	}
 
+	@Override
+	public void verificarFondos() {
+		System.out.println("Hola implemente el metodo abstracto cuentausd");
+	}
+
 
 	
 }

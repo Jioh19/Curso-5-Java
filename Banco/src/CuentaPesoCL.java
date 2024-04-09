@@ -10,5 +10,10 @@ public class CuentaPesoCL extends Cuenta{
 		super(numeroCuenta, saldo, titular, cliente);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public void verificarFondos() {
+		System.out.println("Implmentando el metodo abstracto en Cuentapeso");
+	}
 	
 }

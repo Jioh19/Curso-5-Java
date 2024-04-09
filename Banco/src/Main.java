@@ -29,7 +29,7 @@ public class Main {
 		// Js cuentas1[0]
 		double balance1 = cuenta1.getBalance();
 		
-		System.out.println(balance);
+		/*System.out.println(balance);
 		
 		System.out.println("****************************************************************");
 		System.out.println("El nombre del usuario es: " 
@@ -55,9 +55,13 @@ public class Main {
 		
 		for(FormaDePago pago : pagos) {
 			pago.realizarPago();
-		}
+		}*/
+		
+		cuentaPesos.verificarFondos();
+		cuentaDolares.verificarFondos();
+		
 
-		scanner.close();
+		//scanner.close();
 	}
 
 }

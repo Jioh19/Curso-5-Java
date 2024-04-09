@@ -1,11 +1,9 @@
 
-public class FormaDePago {
+public abstract class FormaDePago {
 
 	public FormaDePago() {
 		super();
 	}
 	
-	public void realizarPago() {
-		
-	}
+	public abstract void realizarPago();
 }

@@ -1,5 +1,5 @@
 
-public class Cuenta {
+public abstract class Cuenta {
 	private int numeroCuenta;
 	private double balance;
 	private String alias;
@@ -18,6 +18,8 @@ public class Cuenta {
 		this.setCliente(cliente);
 	}
 
+	public abstract void verificarFondos();
+	
 	
 	public void depositar(double deposito) {
 		balance += deposito;

@@ -13,5 +13,10 @@ public class CuentaCorriente extends Cuenta{
 		this.lineaCredito = linea;
 	}
 
+	@Override
+	public void verificarFondos() {
+		System.out.println("Implementando el metodo abstracto en Cuentacorriente");
+	}
+
 	
 }

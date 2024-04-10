@@ -1,15 +1,15 @@
 
-public class Efectivo extends FormaDePago{
+public class Efectivo implements FormaPago{
 
+	
+	
 	public Efectivo() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void realizarPago() {
-		System.out.println("Estoy pagando en efectivo KACHING!");
+	public void procesarPago() {
+		System.out.println("Pagaste en efectivo KACHING!!!!");
 	}
-	
 	
 }

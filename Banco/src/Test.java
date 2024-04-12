@@ -1,7 +1,8 @@
+import java.io.IOException;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Dolar dolar = new Dolar();
 		Euro euro = new Euro();
 		
@@ -17,6 +18,19 @@ public class Test {
 		
 		fp = new PayPal();
 		fp.procesarPago();
+		
+		final String os = System.getProperty("os.name");
+		if(os.contains("Linux")) {
+			System.out.print("\033[H\033[2J");			
+		} else {
+			try {
+				Runtime.getRuntime().exec("cls");
+				
+			}
+			catch (final Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

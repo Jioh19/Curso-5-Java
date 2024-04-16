@@ -7,10 +7,10 @@ public class Arreglos {
 
 	public static void main(String[] args) {
 		double inicio = System.currentTimeMillis();
-		int arreglo[] = new int[40000];
+		int arreglo[] = new int[10000];
 
 		for (int i = 0; i < arreglo.length; i++) {
-			arreglo[i] = new Random().nextInt(100);
+			arreglo[i] = new Random().nextInt(10000);
 		}
 		
 		System.out.println(Arrays.toString(arreglo));

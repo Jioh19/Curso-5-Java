@@ -1,24 +1,26 @@
 package com.always.elfo;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		double inicio = System.currentTimeMillis();
 		ArrayList<Integer> calorias = new ArrayList<>();
 		
-		File fl = new File("input.txt");
-		Scanner sc = new Scanner(fl);
+//		File fl = new File("input.txt");
+//		Scanner sc = new Scanner(fl);
+		
+		FileReader fr = new FileReader("input.txt");
+		BufferedReader br = new BufferedReader(fr);
 		
 		int total = 0;
-		for(String line; sc.hasNext();) {
-			line = sc.nextLine();
+		for(String line; (line = br.readLine()) != null;) {
+
 			if(line.isEmpty()) {
 				calorias.add(total);
 				total = 0;
@@ -40,8 +42,11 @@ public class Main {
 		//Collections.sort(calorias, Collections.reverseOrder());
 		
 		double fin = System.currentTimeMillis();
-		System.out.println(calorias.get(0));
+		System.out.println((calorias.get(0) +calorias.get(1) + calorias.get(2) ));
 		System.out.println((fin - inicio));
+		
+		// Hemos encontrado al elfo que lleva más calorías.
+		// Ahora queremos la suma de lso 3 elfos con más calorías
 	}
 
 }

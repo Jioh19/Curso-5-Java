@@ -1,6 +1,6 @@
 package sorting;
 
-public class Persona implements Comparable{
+public class Persona implements Comparable<Persona>{
 	private String nombre;
 	private double salario;
 	public Persona(String nombre, double salario) {
@@ -12,12 +12,16 @@ public class Persona implements Comparable{
 	public String toString() {
 		return "\nPersona [nombre=" + nombre + ", salario=" + salario + "]";
 	}
+	
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Persona o) {
 		if(salario == ((Persona)o).getSalario()) return 0;
 		else if(salario > ((Persona)o).getSalario()) return 1;
 		else return -1;
 	}
+	
+	
+
 	public String getNombre() {
 		return nombre;
 	}

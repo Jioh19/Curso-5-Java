@@ -41,7 +41,7 @@ public class Banco {
 
 		cliente.transferir(0, 1, 100000);
 		
-		transferenciaCliente(cliente2, cliente, 0, 0, 500000);
+		transferenciaCliente(cliente2, cliente, 0, 0, 543320);
 
 		String bienvenida = """
 				*****************************************************
@@ -57,8 +57,6 @@ public class Banco {
 		System.out.println(bienvenida);
 		System.out.println(menu);
 		System.out.println(cliente);
-
-
 		System.out.println(cliente2);
 
 	}

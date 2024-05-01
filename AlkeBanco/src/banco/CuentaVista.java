@@ -35,4 +35,21 @@ public class CuentaVista extends Cuenta{
 		depositoActual = 0;
 	}
 
+	public double getMaxDeposito() {
+		return maxDeposito;
+	}
+
+	public void setMaxDeposito(double maxDeposito) {
+		this.maxDeposito = maxDeposito;
+	}
+
+	public double getDepositoActual() {
+		return depositoActual;
+	}
+
+	public void setDepositoActual(double depositoActual) {
+		this.depositoActual = depositoActual;
+	}
+
+	
 }

@@ -45,4 +45,20 @@ public class CuentaEuro extends Cuenta implements Conversor{
 						moneda, "Saldo:", this.convertir());
 	}
 
+	@Override
+	public boolean seeDepositar(double deposito) {
+		if(maxDeposito < (depositoActual+deposito)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean seeRetirar(double retiro) {
+		if(saldo < retiro*1.03) {
+			return false;
+		}
+		return true;
+	}
+
 }

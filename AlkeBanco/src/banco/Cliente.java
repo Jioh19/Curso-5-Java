@@ -16,19 +16,7 @@ public class Cliente {
 		this.apellido = apellido;
 		this.rut = rut;
 		this.password = password;
-		cuentas = new LinkedList<Cuenta>() {
-		    private static final long serialVersionUID = 1L;
-
-			@Override 
-			public String toString()
-		    {
-		        String result = new String();
-		        for(int i = 0; i < this.size(); i++) {
-		        	result += this.get(i);
-		        }
-		        return result;
-		    }
-		};
+		cuentas = new LinkedList<Cuenta>();
 
 	}
 	
@@ -38,11 +26,15 @@ public class Cliente {
 
 	@Override
 	public String toString() {
+		String result = new String();
+        for(int i = 0; i < cuentas.size(); i++) {
+        	result += cuentas.get(i);
+        }
 		//*****************************************************
 		return String.format("**%15s%-10s%10s%-14s**\n", "Nombre:", nombre, "Apellido:", apellido)+
 				String.format("**%15s%-10s%10s%-14s**\n", "Password:", password, "RUT:", rut)+
 				"*****************************************************\n"+
-				cuentas+
+				result+
 				"*****************************************************\n";
 				
 //		return "Cliente [nombre=" + nombre + ", apellido=" + apellido + ", rut=" + rut + ", password=" + password
@@ -53,6 +45,21 @@ public class Cliente {
 		return cuentas;
 	}
 
+	public boolean transferir(int origen, int destino, double monto) {
+		Cuenta cuentaOrigen = cuentas.get(origen);
+		Cuenta cuentaDestino = cuentas.get(destino);
+		if(cuentaOrigen.getMoneda() != cuentaDestino.getMoneda()) {
+			return false;
+		}
+
+		if(cuentaOrigen.seeRetirar(monto) && cuentaDestino.seeDepositar(monto)) {
+			cuentaOrigen.retirar(monto);
+			cuentaDestino.depositar(monto);
+			return true;
+		}
+		return false;
+
+	}
 	
 	
 }

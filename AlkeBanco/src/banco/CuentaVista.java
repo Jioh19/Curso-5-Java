@@ -51,5 +51,21 @@ public class CuentaVista extends Cuenta{
 		this.depositoActual = depositoActual;
 	}
 
+	@Override
+	public boolean seeDepositar(double deposito) {
+		if(maxDeposito < (depositoActual+deposito)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean seeRetirar(double retiro) {
+		if(saldo < retiro) {
+			return false;
+		}
+		return true;
+	}
+
 	
 }

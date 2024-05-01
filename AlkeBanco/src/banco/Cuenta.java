@@ -15,6 +15,8 @@ public abstract class Cuenta {
 	}
 	public abstract boolean depositar(double deposito);
 	public abstract boolean retirar(double retiro);
+	public abstract boolean seeDepositar(double deposito);
+	public abstract boolean seeRetirar(double retiro);
 	@Override
 	public String toString() {
 		//*****************************************************
@@ -36,6 +38,8 @@ public abstract class Cuenta {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	
+	public Moneda getMoneda() {
+		return moneda;
+	}	
 	
 }

@@ -36,4 +36,17 @@ public class CuentaAhorro extends Cuenta{
 	numRetiro = 5;
 	}
 
+	@Override
+	public boolean seeDepositar(double deposito) {
+		return true;
+	}
+
+	@Override
+	public boolean seeRetirar(double retiro) {
+		if(saldo >= retiro && numRetiro > 0) {
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/byte-buddy-agent-1.11.22.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/mockito-core-4.0.0.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/gson-2.10.1.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/objenesis-3.2.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/byte-buddy-1.11.22.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/mockito-junit-jupiter-4.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

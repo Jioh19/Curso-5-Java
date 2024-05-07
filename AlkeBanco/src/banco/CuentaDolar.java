@@ -31,9 +31,9 @@ public class CuentaDolar extends Cuenta implements Conversor{
 	}
 
 	@Override
-	public double convertir() {
+	public double convertir(double monto) {
 		
-		return saldo * 950;
+		return monto * 950;
 	}
 	
 	@Override
@@ -42,7 +42,7 @@ public class CuentaDolar extends Cuenta implements Conversor{
 		return String.format("**%15s%-10s%10s%12.2f  **\n", "Numero Cta:", 
 				Integer.toString(numero), "Saldo:", saldo)+
 				String.format("**%15s%-10s%10s%12.2f  **\n", "Moneda:", 
-						moneda, "Saldo:", this.convertir());
+						moneda, "Saldo:", this.convertir(saldo));
 	}
 
 	@Override
@@ -59,6 +59,11 @@ public class CuentaDolar extends Cuenta implements Conversor{
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public double reConvertir(double monto) {
+		return monto / 950;
 	}
 
 }

@@ -48,16 +48,29 @@ public class Cliente {
 	public boolean transferir(int origen, int destino, double monto) {
 		Cuenta cuentaOrigen = cuentas.get(origen);
 		Cuenta cuentaDestino = cuentas.get(destino);
-		if (cuentaOrigen.getMoneda() != cuentaDestino.getMoneda()) {
-			return false;
-		}
-
-		if (cuentaOrigen.seeRetirar(monto) && cuentaDestino.seeDepositar(monto)) {
-			cuentaOrigen.retirar(monto);
-			cuentaDestino.depositar(monto);
+		double montoConvertido = monto;
+		
+		cuentaOrigen.retirar(monto);
+		System.out.println("Retirando: " +monto);
+		if (cuentaOrigen.getMoneda() != Moneda.CLP) {
+			montoConvertido = ((Conversor)cuentaOrigen).convertir(montoConvertido);
+			System.out.println("El monto convertido es: " + montoConvertido);
+		} 
+		if (cuentaDestino.getMoneda() != Moneda.CLP) {
+			montoConvertido = ((Conversor)cuentaDestino).reConvertir(montoConvertido);
+			cuentaDestino.depositar(montoConvertido);
+			System.out.println("El monto convertido a depositar es: " + montoConvertido);
+			return true;
+		} else {
+			cuentaDestino.depositar(montoConvertido);
 			return true;
 		}
-		return false;
+//		} else if (cuentaOrigen.seeRetirar(monto) && cuentaDestino.seeDepositar(monto)) {
+//			cuentaOrigen.retirar(monto);
+//			cuentaDestino.depositar(monto);
+//			return true;
+//		}
+
 
 	}
 

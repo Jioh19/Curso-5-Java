@@ -37,25 +37,14 @@ public class Banco {
 		cuentaAhorro2.depositar(700000);
 		cuentaVista2.depositar(109420);
 		cuentaDolar2.depositar(20000);
-		cuentaEuro2.depositar(20000);
+		cuentaEuro2.depositar(10000);
 
 		cliente.transferir(0, 1, 100000);
 		
 		transferenciaCliente(cliente2, cliente, 0, 0, 543320);
+		cliente2.transferir(2,0, 1000);
 
-		String bienvenida = """
-				*****************************************************
-				**          Bienvenido al Alke Banco               **
-				*****************************************************""";
-
-		String menu = """
-				*****************************************************
-				** 1- Depositar                                    **
-				** 2- Retirar                                      **
-				** 0- Salir                                        **
-				*****************************************************""";
-		System.out.println(bienvenida);
-		System.out.println(menu);
+		Menu.printMenu(cliente.getCuentas());
 		System.out.println(cliente);
 		System.out.println(cliente2);
 

@@ -4,8 +4,9 @@ import model.Cuenta;
 
 public class ServiceCuenta {
 
-	public void depositar(Cuenta cuenta, double monto) {
+	public boolean depositar(Cuenta cuenta, double monto) {
 		cuenta.setSaldo(cuenta.getSaldo() + monto);
+		return true;
 	}
 	
 	public boolean retirar(Cuenta cuenta, double monto) {

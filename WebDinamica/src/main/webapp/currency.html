@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Información</title>
+</head>
+<body>
+	<form action="/WebDinamica/SegundoCurrencyServlet" method="get">
+		Usuario: <input type="text" name="nombre">
+		<br/>
+		Importe: <input type="text" name="importe">
+		<br/>
+		Elija el tipo de moneda: 
+		<br/>
+		<input type="Radio" name="moneda" value="USD">Dolar Americano <br/>
+		<input type="Radio" name="moneda" value="CLP">Peso Chileno <br/>
+		<input type="Radio" name="moneda" value="EUR">Euro <br/>
+		<input type="Radio" name="moneda" value="JPY">Yen Japones <br/>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>

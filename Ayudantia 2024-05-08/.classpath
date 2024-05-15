@@ -6,8 +6,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/byte-buddy-1.11.22.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/byte-buddy-agent-1.11.22.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/junit-4.13.2.jar"/>
 	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/mockito-core-4.0.0.jar"/>
-	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/mockito-junit-jupiter-4.0.0.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/objenesis-3.2.jar"/>
+	<classpathentry kind="lib" path="/run/media/jioh/Jioh External USB/Downloads/jar/standard-1.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

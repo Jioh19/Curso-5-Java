@@ -46,8 +46,7 @@ public class ConexionDB {
 	}
 	public static void main(String[] args ) {
 		
-		SwingApp swingApp = new SwingApp();
-		swingApp.setVisible(true);
+		
 		conex = conexion();
 	
 		
@@ -86,7 +85,9 @@ public class ConexionDB {
 			System.out.println(c);
 		}
 
-		
+		SwingApp swingApp = new SwingApp();
+	
+		swingApp.enable(true);
 		
 	}
 }

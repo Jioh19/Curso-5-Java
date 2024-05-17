@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ProductCtrl</display-name>
+    <servlet-name>ProductCtrl</servlet-name>
+    <servlet-class>cl.bootcamp.controller.ProductCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductCtrl</servlet-name>
+    <url-pattern>/ProductCtrl</url-pattern>
+  </servlet-mapping>
 </web-app>

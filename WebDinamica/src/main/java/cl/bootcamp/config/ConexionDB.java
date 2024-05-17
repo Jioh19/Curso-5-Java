@@ -8,7 +8,6 @@ import java.sql.Statement;
 
 public class ConexionDB {
 
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static final String BBDD = "jdbc:mysql://localhost/tiendaE";
 	private static final String USER = "root";
 	private static final String PASS = "1160";
@@ -21,7 +20,6 @@ public class ConexionDB {
 
 			if (conex == null) {
 				conex = DriverManager.getConnection(BBDD, USER, PASS);
-
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

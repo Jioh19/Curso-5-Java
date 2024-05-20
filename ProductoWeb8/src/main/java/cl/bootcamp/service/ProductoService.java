@@ -58,7 +58,7 @@ public class ProductoService implements RepoService<Producto>{
 		prod.setPrecio(p.getPrecio() == null? prod.getPrecio(): p.getPrecio());
 		String update = String.format(
 				"UPDATE productos SET nombre='%s', precio='%s' WHERE id='%s'",
-				prod.getNombre(), prod.getPrecio());
+				prod.getNombre(), prod.getPrecio(), prod.getId());
 		return Dao.actualizarBaseDatos(update);
 	}
 

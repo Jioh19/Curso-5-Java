@@ -6,34 +6,31 @@
 <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="static/bootstrap/js/bootstrap.bundle.min"></script>
 <meta charset="UTF-8">
-<title>Registro de productos</title>
+<title>Editar</title>
 </head>
 <body>
 
-	<br />
-
+<br />
 	<div class="container">
-
 		<div class="card mx-auto" style="width: 40%;">
 			<div class="card-body">
-				<h5 class="card-title">Registro de Productos</h5>
-				<form action="/ProductoWeb8/ProductControllerServlet" method="post">
+				<form action="/ProductoWeb8/ProductEditServlet" method="post">
+					<input type="hidden" name="id" value="${sessionScope.id }">
 					<div class="mb-3">
 						<label for="nombre" class="form-label">Nombre</label> <input
-							type="text" class="form-control" name="nombre">
+							type="text" class="form-control" name="nombre"
+							value="${sessionScope.nombre }">
 					</div>
 					<div class="mb-3">
 						<label for="precio" class="form-label">Precio</label> <input
-							type="number" class="form-control" name="precio">
+							type="number" class="form-control" name="precio"
+							value="${sessionScope.precio }">
 					</div>
 					<button type="submit" class="btn btn-primary">Ingresar</button>
 				</form>
-
-				<br /> <a href="/ProductoWeb8/ProductControllerServlet">Ver listado de
-					productos</a>
 			</div>
 		</div>
-
 	</div>
+
 </body>
 </html>

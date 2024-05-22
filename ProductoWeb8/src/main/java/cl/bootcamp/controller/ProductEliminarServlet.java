@@ -42,7 +42,7 @@ public class ProductEliminarServlet extends HttpServlet {
 		}
 		
 		if(resultado > 0) {
-			response.sendRedirect(request.getContextPath()+"/ProductCtrl");
+			response.sendRedirect(request.getContextPath()+"/ProductControllerServlet");
 		} else {
 			response.sendRedirect("error.jsp");
 		}

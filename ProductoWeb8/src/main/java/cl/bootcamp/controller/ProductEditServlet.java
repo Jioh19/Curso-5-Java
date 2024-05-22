@@ -2,8 +2,6 @@ package cl.bootcamp.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,18 +13,17 @@ import javax.servlet.http.HttpSession;
 import cl.bootcamp.model.Producto;
 import cl.bootcamp.service.ProductoService;
 
-
 /**
- * Servlet implementation class ProductCtrl
+ * Servlet implementation class ProductEditServlet
  */
-@WebServlet("/ProductCtrl")
-public class ProductCtrl extends HttpServlet {
+@WebServlet("/ProductEditServlet")
+public class ProductEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductCtrl() {
+    public ProductEditServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,49 +32,40 @@ public class ProductCtrl extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Producto> listaProd = new ArrayList<>();
-		ProductoService service = new ProductoService();
-		
-		try {
-			listaProd = service.getAll();
-		}catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
+		String id = request.getParameter("id");
+		String nombre = request.getParameter("nombre");
+		String precio = request.getParameter("precio");
 		HttpSession session = request.getSession();
-		session.setAttribute("listaProd", listaProd);
+		session.setAttribute("id", id);
+		session.setAttribute("nombre", nombre);
+		session.setAttribute("precio", precio);
 		
-		response.sendRedirect("listaProductos.jsp");
+		response.sendRedirect("editar.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//Creacion de objetos del metodo
 		Producto producto = new Producto();
 		ProductoService service = new ProductoService();
 		
-		//Seteo el objeto producto con los valores del formulario
+		producto.setId(Integer.valueOf(request.getParameter("id")));
 		producto.setNombre(request.getParameter("nombre"));
 		producto.setPrecio(request.getParameter("precio"));
-				
+		
 		int resultado = 0;
 		try {
-			resultado = service.create(producto);
-			System.out.println(resultado);
+			resultado = service.update(producto);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(0 < resultado) {
-			response.sendRedirect("exito.jsp");
+		if(resultado > 0) {
+			response.sendRedirect(request.getContextPath()+"/ProductControllerServlet");
 		} else {
 			response.sendRedirect("error.jsp");
-		}	
+		}
 	}
-	
-	
 
 }

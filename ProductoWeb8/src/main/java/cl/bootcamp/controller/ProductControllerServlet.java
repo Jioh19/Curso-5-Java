@@ -79,33 +79,4 @@ public class ProductControllerServlet extends HttpServlet {
 			response.sendRedirect("error.jsp");
 		}
 	}
-
-	@Override
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		ProductoService service = new ProductoService();
-		
-		int resultado = 0;
-		try {
-			resultado = service.delete(Integer.valueOf(id));
-		} catch (NumberFormatException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		if(resultado > 0) {
-			response.sendRedirect(request.getContextPath()+"/ProductCtrl");
-		} else {
-			response.sendRedirect("error.jsp");
-		}
-	}
-
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPut(req, resp);
-	}
-	
-	
-
 }

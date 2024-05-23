@@ -19,17 +19,18 @@ import cl.bootcamp.service.ProductoService;
 @WebServlet("/ProductEditServlet")
 public class ProductEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ProductEditServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ProductEditServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
@@ -39,21 +40,22 @@ public class ProductEditServlet extends HttpServlet {
 		session.setAttribute("id", id);
 		session.setAttribute("nombre", nombre);
 		session.setAttribute("precio", precio);
-		
+
 		response.sendRedirect("editar.jsp");
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Producto producto = new Producto();
 		ProductoService service = new ProductoService();
-		
+
 		producto.setId(Integer.valueOf(request.getParameter("id")));
 		producto.setNombre(request.getParameter("nombre"));
 		producto.setPrecio(request.getParameter("precio"));
-		
+
 		int resultado = 0;
 		try {
 			resultado = service.update(producto);
@@ -61,8 +63,8 @@ public class ProductEditServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(resultado > 0) {
-			response.sendRedirect(request.getContextPath()+"/ProductControllerServlet");
+		if (resultado > 0) {
+			response.sendRedirect(request.getContextPath() + "/ProductControllerServlet");
 		} else {
 			response.sendRedirect("error.jsp");
 		}

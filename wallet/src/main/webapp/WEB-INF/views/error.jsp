@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Página de Error</title>
 </head>
 <body>
-	<h1>Hola mundo, este es mi jsp!!!!</h1>
-	<a href="/EntregaModulo5/Empleado">Listar Empleados</a>
-	
+	<div>No se puedo registrar usuario</div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
 
 
-	<form action="crear" method="post">
+	<form action="guardar" method="post">
 		<div class="mb-3">
 			<label for="nombre" class="form-label">Nombre</label> 
 			<input type="text"  class="form-control"name="nombreUsuario" id="nombreUsuario">

@@ -27,4 +27,23 @@ public class EmpleadoDao extends Dao{
 		
 		return empleados;
 	}
+	
+	public int crear(Empleado e) throws SQLException {
+		String insert = "INSERT INTO empleados (nombre, primerApellido, segundoApellido, email, salario) VALUES"
+				+ String.format("('%s', '%s', '%s', '%s', '%f')", 
+						e.getNombre(), e.getPrimerApellido(), e.getSegundoApellido(), e.getEmail(), e.getSalario());
+		return actualizarBaseDatos(insert);
+	}
+	
+//	public static void main(String[] args) {
+//		EmpleadoDao emple = new EmpleadoDao();
+//		Empleado e = new Empleado("Natalia", "Peña", "Diaz", "natalia@mail.com", 69420.0);
+//		try {
+//			System.out.println(emple.crear(e));
+//		} catch (SQLException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//	}
+	
 }

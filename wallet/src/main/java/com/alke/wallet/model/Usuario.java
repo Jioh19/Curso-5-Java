@@ -1,9 +1,17 @@
 package com.alke.wallet.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Usuario {
 	private String nombreUsuario;
 	private String email;
 	private String password;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	public String getNombreUsuario() {
 		return nombreUsuario;
@@ -28,6 +36,11 @@ public class Usuario {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Usuario [nombreUsuario=" + nombreUsuario + ", email=" + email + ", password=" + password + ", id=" + id
+				+ "]";
 	}
 	
 	

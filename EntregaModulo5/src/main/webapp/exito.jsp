@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hola mundo, este es mi jsp!!!!</h1>
-	<a href="/EntregaModulo5/Empleado">Listar Empleados</a>
-	
+	<h1>Empleado creado con EXITO!!!</h1>
 </body>
 </html>

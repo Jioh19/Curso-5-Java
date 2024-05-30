@@ -14,6 +14,17 @@ public class Empleado {
 		super();
 	}
 
+	
+	public Empleado(String nombre, String primerApellido, String segundoApellido, String email, Double salario) {
+		super();
+		this.nombre = nombre;
+		this.primerApellido = primerApellido;
+		this.segundoApellido = segundoApellido;
+		this.email = email;
+		this.salario = salario;
+	}
+
+
 	public Empleado(Integer id, String nombre, String primerApellido, String segundoApellido, String email,
 			Double salario) {
 		super();

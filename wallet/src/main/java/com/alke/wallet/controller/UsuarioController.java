@@ -1,9 +1,10 @@
 package com.alke.wallet.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -61,17 +62,45 @@ public class UsuarioController {
 		String pagina = "error";
 		
 		try {
-			int usuarioGuardado = service.guardar(usuario);
-			if(usuarioGuardado >= 1) {
+			Usuario usuarioGuardado = service.guardar(usuario);
+		//	if(usuarioGuardado >= 1) { Usar optional
 				model.addAttribute("nombre", usuario.getNombreUsuario());
 				model.addAttribute("email", usuario.getEmail());
 				pagina = "bienvenida";
-			}
+		//	}
 		} catch(Exception ex) {
 			log.error("Error en insertar datos: " + ex.getMessage());
 		}
 		
 		log.info("Finaliza el método UsuarioController.guardar");
+		return "bienvenida";
+	}
+	
+	@GetMapping("/obtener")
+	public String obtener() {
+		log.info("Ingresando al mpetodo obtener()");
+		String pagina = "error";
+		
+		try {
+			List<Usuario> usuarios = service.obtenerUsuario();
+			if(usuarios.size() >= 0) {
+				usuarios.stream()
+				.forEach(obj -> System.out.println(obj.getNombreUsuario()));
+				pagina = "bienvenida";
+			}
+		} catch(Exception ex) {
+			log.error("Error al consultar -> " + ex.getMessage());			
+		}
+		
+		return pagina;
+		
+		
+	}
+	
+	@GetMapping(value="/buscarEmail", params = {"email"})
+	public String buscarEmail(@RequestParam String email) {
+		Usuario usuario = service.obtenerUsuarioPorEmail(email);
+		System.out.println(usuario.getNombreUsuario());
 		return "bienvenida";
 	}
 }

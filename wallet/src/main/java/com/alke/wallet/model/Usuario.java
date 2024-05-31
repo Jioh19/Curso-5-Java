@@ -1,18 +1,31 @@
 package com.alke.wallet.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Usuario {
-	private String nombreUsuario;
-	private String email;
-	private String password;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Column(name="nombre")
+	private String nombreUsuario;
+	private String email;
+	@Column(name="pass")
+	private String password;
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	private Cuenta cuenta;
+	
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}

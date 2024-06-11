@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+</head>
+<body>
+	
+	<div>Página de home</div>
+	
+	<p>
+		Usuario: <span sec:authentication="principal.username"></span>
+		<br><br>
+		Rol(es): <span sec:authentication="principal.authorities"></span>
+	
+	</p>
+	
+	<div sec:authorize="hasRole('Jefe')">
+	
+		<div>Sólo para usuarios jefes</div>
+		<a th:href="@{/instrucciones}">
+			Ir a página de instrucciones
+		</a>
+	
+	</div>
+	
+	<!-- cerrar sesión -->
+	<form action="#" th:action="@{/logout}" method="POST">
+	
+		<input type="submit" value="Cerrar sesión" />
+	
+	</form>
+	
+	
+	
+	
+	
+</body>
+</html>

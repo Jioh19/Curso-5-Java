@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.alke.wallet.model.Usuario;
 import com.alke.wallet.repository.UsuarioRepositorio;
+
 
 @Service
 public class UsuarioService {
@@ -36,16 +38,18 @@ public class UsuarioService {
 //				usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword());
 //	}
 	
+	@Transactional
 	public Usuario guardar(Usuario usuario) {
 		Usuario usuarioGuardado = repositorio.save(usuario);
 		return usuarioGuardado;
 	}
-	
+	@Transactional(readOnly = true)
 	public List<Usuario> obtenerUsuario() {
 		List<Usuario> listaUsuario = (List<Usuario>) repositorio.findAll();
 		return listaUsuario;
 	}
 	
+	@Transactional(readOnly = true)
 	public Usuario obtenerUsuarioPorEmail(String email) {
 		Usuario usuario = repositorio.buscarPorEmail(email);
 		return usuario;

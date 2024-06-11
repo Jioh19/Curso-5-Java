@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Usuarios</title>
+</head>
+<body>
+
+	<form action="#" th:action="@{/crearUsuario}" method="POST">
+		<input type="hidden" name="enabled" value="1">
+		<label for="username">Nombre de usuario:</label>
+		<input type="text" name="username" id="username">
+		<br>
+		<label for="password">Password:</label>
+		<input type="text" name="password" id="password">
+		<br>
+		<label for="roles">Rol(es):</label>
+		<select multiple name="roles" id="roles">
+			<option>ROLE_Empleado</option>
+			<option>ROLE_Jefe</option>
+		</select>
+		<br>
+		<input type="submit" value="Enviar">
+	</form>
+	
+</body>
+</html>
